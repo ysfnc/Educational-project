@@ -4,15 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lotto Number Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="bg-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
     <div class="container">
         <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
-        <a href="focus.html" class="nav-link" style="position:absolute;top:1rem;left:1rem;color:var(--primary-color);text-decoration:none;font-size:0.9rem;font-weight:500;">집중 타이머 →</a>
-        <h1>Lotto Number Generator</h1>
+        <a href="focus.html" class="nav-link">집중 타이머 &rarr;</a>
+        <div class="title-section">
+            <span class="title-icon">🎱</span>
+            <h1>Lotto Number Generator</h1>
+            <p class="subtitle">Pick your lucky numbers today!</p>
+        </div>
         <lotto-numbers></lotto-numbers>
-        <button id="generator-btn">Generate Numbers</button>
+        <button id="generator-btn" class="generate-btn">
+            <span class="btn-icon">🎲</span> Generate Numbers
+        </button>
     </div>
     <script src="main.js"></script>
 </body>

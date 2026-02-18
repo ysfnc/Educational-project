@@ -4,15 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>집중 타이머</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="focus.css">
 </head>
 <body>
+    <div class="bg-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
     <div class="container focus-container">
         <button class="theme-toggle" id="theme-toggle" aria-label="다크모드 전환">🌙</button>
-        <a href="index.html" class="back-link">← 돌아가기</a>
+        <a href="index.html" class="back-link">&larr; 돌아가기</a>
 
-        <h1>집중 타이머</h1>
+        <div class="title-section">
+            <span class="title-icon">⏱️</span>
+            <h1>집중 타이머</h1>
+        </div>
 
         <!-- 탭 네비게이션 -->
         <div class="tab-nav">
@@ -73,9 +84,7 @@
 
         <!-- 기록 목록 화면 -->
         <div id="history-screen" class="screen">
-            <div id="history-list" class="history-list">
-                <!-- 동적 생성 -->
-            </div>
+            <div id="history-list" class="history-list"></div>
             <div id="history-empty" class="history-empty" style="display:none;">
                 <p>아직 기록이 없습니다.</p>
                 <p>첫 번째 집중 세션을 시작해보세요!</p>
