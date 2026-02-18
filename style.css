@@ -3,9 +3,26 @@
     --secondary-color: #f5a623;
     --background-color: #f0f2f5;
     --text-color: #333;
-    --white: #fff;
+    --card-bg: #fff;
     --shadow-color: rgba(0, 0, 0, 0.1);
     --font-family: 'Helvetica Neue', sans-serif;
+    --gradient: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #7ab3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+    --btn-hover: #357abd;
+}
+
+[data-theme="dark"] {
+    --primary-color: #6db3f8;
+    --secondary-color: #f5a623;
+    --background-color: #1a1a2e;
+    --text-color: #e0e0e0;
+    --card-bg: #16213e;
+    --shadow-color: rgba(0, 0, 0, 0.4);
+    --gradient: linear-gradient(to right top, #0f0c29, #302b63, #24243e);
+    --btn-hover: #5a9fd4;
+}
+
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
 body {
@@ -17,17 +34,18 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #7ab3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+    background-image: var(--gradient);
 }
 
 .container {
     text-align: center;
-    background: var(--white);
+    background: var(--card-bg);
     padding: 2rem;
     border-radius: 1rem;
     box-shadow: 0 10px 20px var(--shadow-color);
     max-width: 90%;
     width: 500px;
+    position: relative;
 }
 
 h1 {
@@ -37,7 +55,7 @@ h1 {
 
 button {
     background-color: var(--primary-color);
-    color: var(--white);
+    color: #fff;
     border: none;
     padding: 0.8rem 1.5rem;
     border-radius: 0.5rem;
@@ -48,10 +66,34 @@ button {
 }
 
 button:hover {
-    background-color: #357abd;
+    background-color: var(--btn-hover);
     transform: translateY(-2px);
 }
 
 button:active {
     transform: translateY(0);
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.4rem;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: none;
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background: none;
+    transform: rotate(30deg);
 }
