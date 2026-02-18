@@ -42,13 +42,14 @@
 body {
     font-family: var(--font-family);
     background: var(--bg-gradient);
+    background-attachment: fixed;
     color: var(--text-color);
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    overflow: hidden;
+    padding: 2rem 0 0;
     transition: background 0.5s ease;
 }
 
@@ -243,4 +244,161 @@ button {
 .back-link:hover {
     background: var(--primary-color);
     color: #fff;
+}
+
+/* 콘텐츠 섹션 */
+.content-section {
+    max-width: 520px;
+    width: 92%;
+    margin: 1.5rem auto 0;
+    z-index: 1;
+    position: relative;
+}
+
+.content-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--card-border);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: left;
+    transition: background 0.4s ease, border-color 0.4s ease;
+}
+
+.content-card h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.7rem;
+}
+
+.content-card p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.content-card ol,
+.content-card ul {
+    padding-left: 1.2rem;
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: var(--text-color);
+}
+
+.content-card li {
+    margin-bottom: 0.3rem;
+}
+
+/* 색상 안내 */
+.color-guide {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.color-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    color: var(--text-color);
+}
+
+.color-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* 개인정보처리방침 */
+.privacy-container {
+    width: 600px;
+    text-align: left;
+}
+
+.privacy-content {
+    margin-top: 1rem;
+}
+
+.privacy-section {
+    margin-bottom: 1.5rem;
+}
+
+.privacy-section h2 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.privacy-section p {
+    font-size: 0.88rem;
+    line-height: 1.7;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.privacy-section ul {
+    padding-left: 1.2rem;
+    font-size: 0.88rem;
+    line-height: 1.8;
+    color: var(--text-color);
+}
+
+.privacy-section li {
+    margin-bottom: 0.3rem;
+}
+
+.privacy-section a {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+/* 푸터 */
+.site-footer {
+    width: 100%;
+    max-width: 600px;
+    margin: 2rem auto 1.5rem;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    z-index: 1;
+    position: relative;
+    border-top: 1px solid var(--card-border);
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.8rem;
+}
+
+.footer-nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.footer-nav a:hover {
+    color: var(--primary-color);
+}
+
+.footer-copy {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    opacity: 0.7;
+}
+
+/* 광고 컨테이너 */
+.ad-container {
+    z-index: 1;
+    position: relative;
 }
