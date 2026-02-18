@@ -1,1 +1,57 @@
-/* Add styles here */
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #f5a623;
+    --background-color: #f0f2f5;
+    --text-color: #333;
+    --white: #fff;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --font-family: 'Helvetica Neue', sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #7ab3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+}
+
+.container {
+    text-align: center;
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 20px var(--shadow-color);
+    max-width: 90%;
+    width: 500px;
+}
+
+h1 {
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px var(--shadow-color);
+}
+
+button:hover {
+    background-color: #357abd;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
