@@ -1,0 +1,493 @@
+/* 집중 타이머 스타일 */
+
+.focus-container {
+    width: 420px;
+    padding: 2rem 2rem 1.5rem;
+}
+
+.back-link {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: opacity 0.2s;
+}
+
+.back-link:hover {
+    opacity: 0.7;
+}
+
+/* 탭 네비게이션 */
+.tab-nav {
+    display: flex;
+    gap: 0;
+    margin-bottom: 1.5rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    border: 2px solid var(--primary-color);
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: none;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.tab-btn:hover {
+    background: transparent;
+    transform: none;
+    opacity: 0.8;
+}
+
+.tab-btn.active {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.tab-btn.active:hover {
+    background-color: var(--primary-color);
+    opacity: 1;
+}
+
+/* 화면 전환 */
+.screen {
+    display: none;
+}
+
+.screen.active {
+    display: block;
+}
+
+/* 타이머 디스플레이 */
+.timer-display {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    margin: 0 auto 1.5rem;
+}
+
+.progress-ring {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+
+.progress-ring-bg {
+    fill: none;
+    stroke: var(--shadow-color);
+    stroke-width: 8;
+}
+
+.progress-ring-fill {
+    fill: none;
+    stroke: var(--primary-color);
+    stroke-width: 8;
+    stroke-linecap: round;
+    stroke-dasharray: 678.58;
+    stroke-dashoffset: 678.58;
+    transition: stroke-dashoffset 1s linear;
+}
+
+.timer-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    color: var(--text-color);
+    letter-spacing: 2px;
+}
+
+/* 타이머 컨트롤 */
+.timer-controls {
+    display: flex;
+    gap: 0.6rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.control-btn {
+    padding: 0.7rem 1.2rem;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    min-width: 80px;
+}
+
+.start-btn {
+    background-color: #27ae60;
+}
+
+.start-btn:hover {
+    background-color: #219a52;
+}
+
+.pause-btn {
+    background-color: var(--secondary-color);
+}
+
+.pause-btn:hover {
+    background-color: #e09510;
+}
+
+.reset-btn {
+    background-color: #95a5a6;
+}
+
+.reset-btn:hover {
+    background-color: #7f8c8d;
+}
+
+.finish-btn {
+    background-color: var(--primary-color);
+}
+
+.finish-btn:hover {
+    background-color: var(--btn-hover);
+}
+
+.save-btn {
+    background-color: #27ae60;
+}
+
+.save-btn:hover {
+    background-color: #219a52;
+}
+
+.discard-btn {
+    background-color: #e74c3c;
+    font-size: 0.85rem;
+}
+
+.discard-btn:hover {
+    background-color: #c0392b;
+}
+
+/* 진행 중 메모 */
+.mid-log-section {
+    margin-top: 1.2rem;
+    border-top: 1px solid var(--shadow-color);
+    padding-top: 1rem;
+}
+
+.mid-log-input-row {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.mid-log-input {
+    flex: 1;
+    padding: 0.6rem 0.8rem;
+    border: 2px solid var(--shadow-color);
+    border-radius: 0.5rem;
+    font-family: var(--font-family);
+    font-size: 0.9rem;
+    background: var(--card-bg);
+    color: var(--text-color);
+    transition: border-color 0.2s;
+}
+
+.mid-log-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.mid-log-add-btn {
+    min-width: 60px;
+    padding: 0.6rem 0.8rem;
+    font-size: 0.85rem;
+    background-color: var(--primary-color);
+}
+
+.mid-log-add-btn:hover {
+    background-color: var(--btn-hover);
+}
+
+.mid-log-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.8rem 0 0;
+    text-align: left;
+}
+
+.mid-log-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.6rem;
+    margin-bottom: 0.3rem;
+    background: var(--background-color);
+    border-radius: 0.4rem;
+    font-size: 0.85rem;
+}
+
+.mid-log-time {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 0.8rem;
+    min-width: 42px;
+    font-variant-numeric: tabular-nums;
+}
+
+.mid-log-note {
+    flex: 1;
+    color: var(--text-color);
+    word-break: break-word;
+}
+
+.mid-log-remove {
+    background: none;
+    border: none;
+    color: #e74c3c;
+    cursor: pointer;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.3rem;
+    border-radius: 0.3rem;
+    box-shadow: none;
+    opacity: 0.4;
+    transition: opacity 0.2s;
+}
+
+.mid-log-remove:hover {
+    opacity: 1;
+    background: rgba(231, 76, 60, 0.1);
+    transform: none;
+}
+
+/* 알람 화면 */
+.alarm-notice {
+    margin-bottom: 1.2rem;
+}
+
+.alarm-icon {
+    font-size: 3rem;
+    animation: shake 0.5s ease-in-out infinite alternate;
+    margin-bottom: 0.5rem;
+}
+
+@keyframes shake {
+    0% { transform: rotate(-10deg); }
+    100% { transform: rotate(10deg); }
+}
+
+.alarm-notice h2 {
+    color: var(--secondary-color);
+    margin: 0.3rem 0;
+    font-size: 1.5rem;
+}
+
+.session-duration {
+    color: var(--text-color);
+    opacity: 0.7;
+    font-size: 0.95rem;
+    margin: 0.3rem 0 0;
+}
+
+/* 기록 화면 - 진행 중 메모 요약 */
+.record-mid-logs {
+    text-align: left;
+    margin-bottom: 1rem;
+    padding: 0.8rem;
+    background: var(--background-color);
+    border-radius: 0.5rem;
+}
+
+.record-mid-logs h3 {
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    margin: 0 0 0.5rem;
+}
+
+/* 기록 입력 폼 */
+.record-form {
+    text-align: left;
+}
+
+.record-form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    font-size: 0.95rem;
+}
+
+.record-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid var(--shadow-color);
+    border-radius: 0.5rem;
+    font-family: var(--font-family);
+    font-size: 0.95rem;
+    resize: vertical;
+    background: var(--card-bg);
+    color: var(--text-color);
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+
+.record-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.record-actions {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 1rem;
+    justify-content: center;
+}
+
+/* 기록 목록 */
+.history-list {
+    text-align: left;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.history-date-group {
+    margin-bottom: 1.2rem;
+}
+
+.history-date {
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid var(--shadow-color);
+}
+
+.history-card {
+    background: var(--background-color);
+    border-radius: 0.5rem;
+    padding: 0.8rem;
+    margin-bottom: 0.5rem;
+    transition: transform 0.15s;
+}
+
+.history-card:hover {
+    transform: translateX(4px);
+}
+
+.history-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.4rem;
+}
+
+.history-time {
+    font-size: 0.8rem;
+    color: var(--text-color);
+    opacity: 0.6;
+}
+
+.history-duration {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    background: rgba(245, 166, 35, 0.15);
+    padding: 0.15rem 0.5rem;
+    border-radius: 1rem;
+}
+
+.history-note {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    line-height: 1.4;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+/* 기록 카드 내 활동 로그 */
+.history-logs {
+    margin: 0.4rem 0;
+    padding: 0.4rem 0;
+    border-top: 1px dashed var(--shadow-color);
+    border-bottom: 1px dashed var(--shadow-color);
+}
+
+.history-log-item {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    padding: 0.15rem 0;
+}
+
+.history-log-time {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 0.75rem;
+    min-width: 38px;
+    font-variant-numeric: tabular-nums;
+}
+
+.history-log-note {
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.history-empty {
+    text-align: center;
+    padding: 2rem 0;
+    color: var(--text-color);
+    opacity: 0.5;
+}
+
+.history-empty p {
+    margin: 0.3rem 0;
+}
+
+#clear-history-btn {
+    margin-top: 1rem;
+    width: 100%;
+}
+
+/* 알람 깜빡임 */
+@keyframes flash {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.alarm-flash {
+    animation: flash 0.8s ease-in-out 3;
+}
+
+/* 개별 기록 삭제 버튼 */
+.history-delete-btn {
+    background: none;
+    border: none;
+    color: #e74c3c;
+    cursor: pointer;
+    font-size: 0.8rem;
+    padding: 0.1rem 0.4rem;
+    border-radius: 0.3rem;
+    box-shadow: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.history-card:hover .history-delete-btn {
+    opacity: 0.6;
+}
+
+.history-delete-btn:hover {
+    opacity: 1 !important;
+    background: rgba(231, 76, 60, 0.1);
+    transform: none;
+}

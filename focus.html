@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>집중 타이머</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="focus.css">
+</head>
+<body>
+    <div class="container focus-container">
+        <button class="theme-toggle" id="theme-toggle" aria-label="다크모드 전환">🌙</button>
+        <a href="index.html" class="back-link">← 돌아가기</a>
+
+        <h1>집중 타이머</h1>
+
+        <!-- 탭 네비게이션 -->
+        <div class="tab-nav">
+            <button class="tab-btn active" data-tab="timer">타이머</button>
+            <button class="tab-btn" data-tab="history">기록</button>
+        </div>
+
+        <!-- 타이머 화면 -->
+        <div id="timer-screen" class="screen active">
+            <div class="timer-display">
+                <svg class="progress-ring" viewBox="0 0 240 240">
+                    <circle class="progress-ring-bg" cx="120" cy="120" r="108" />
+                    <circle class="progress-ring-fill" cx="120" cy="120" r="108" />
+                </svg>
+                <div class="timer-text" id="timer-text">00:00</div>
+            </div>
+
+            <div class="timer-controls">
+                <button id="start-btn" class="control-btn start-btn">시작</button>
+                <button id="pause-btn" class="control-btn pause-btn" style="display:none;">일시정지</button>
+                <button id="reset-btn" class="control-btn reset-btn" style="display:none;">초기화</button>
+                <button id="finish-btn" class="control-btn finish-btn" style="display:none;">종료</button>
+            </div>
+
+            <!-- 진행 중 메모 입력 -->
+            <div id="mid-log-section" class="mid-log-section" style="display:none;">
+                <div class="mid-log-input-row">
+                    <input type="text" id="mid-log-input" class="mid-log-input" placeholder="지금 뭘 했는지 적어보세요..." />
+                    <button id="mid-log-add-btn" class="control-btn mid-log-add-btn">추가</button>
+                </div>
+                <ul id="mid-log-list" class="mid-log-list"></ul>
+            </div>
+        </div>
+
+        <!-- 기록 화면 (알람 후) -->
+        <div id="record-screen" class="screen">
+            <div class="alarm-notice">
+                <div class="alarm-icon">⏰</div>
+                <h2>시간 종료!</h2>
+                <p class="session-duration" id="session-duration"></p>
+            </div>
+
+            <!-- 진행 중 작성한 메모 요약 -->
+            <div id="record-mid-logs" class="record-mid-logs" style="display:none;">
+                <h3>이번 세션 활동 기록</h3>
+                <ul id="record-mid-log-list" class="mid-log-list"></ul>
+            </div>
+
+            <div class="record-form">
+                <label for="focus-note">마무리 메모</label>
+                <textarea id="focus-note" rows="3" placeholder="이번 세션을 정리해보세요..."></textarea>
+                <div class="record-actions">
+                    <button id="save-btn" class="control-btn save-btn">저장 후 다음 세션</button>
+                    <button id="discard-btn" class="control-btn discard-btn">삭제</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 기록 목록 화면 -->
+        <div id="history-screen" class="screen">
+            <div id="history-list" class="history-list">
+                <!-- 동적 생성 -->
+            </div>
+            <div id="history-empty" class="history-empty" style="display:none;">
+                <p>아직 기록이 없습니다.</p>
+                <p>첫 번째 집중 세션을 시작해보세요!</p>
+            </div>
+            <button id="clear-history-btn" class="control-btn discard-btn" style="display:none;">전체 기록 삭제</button>
+        </div>
+    </div>
+
+    <script src="focus.js"></script>
+</body>
+</html>
